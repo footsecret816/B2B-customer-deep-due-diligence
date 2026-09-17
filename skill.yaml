@@ -1,0 +1,35 @@
+name: b2b-customer-due-diligence
+version: 1.0.0
+language: zh-CN
+entrypoint: SKILL.md
+description: "外贸B2B客户深度背调Skill：固定核验官网、工商、域名、Archive、Maps、LinkedIn及主流社媒，识别客户画像、关键人、市场与风险，并用多源交叉验证降低漏查和AI随机性。"
+inputs:
+  required:
+    - company_name
+  recommended:
+    - country
+    - website
+  optional:
+    - contact_name
+    - email
+    - phone
+    - address
+    - inquiry_product
+    - lead_source
+    - business_context
+outputs:
+  - customer_profile
+  - evidence_matrix
+  - conflicts
+  - unresolved_items
+  - sources
+capability_requirements:
+  minimum:
+    - public_web_search
+  optional:
+    - browser
+    - maps
+    - authenticated_browser
+notes:
+  - "核心规则为平台无关Markdown；平台适配放在adapters目录。"
+  - "本Skill不包含任何账号凭据、付费海关数据或付费征信。"
